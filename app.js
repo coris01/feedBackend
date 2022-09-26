@@ -50,7 +50,7 @@ app.use((error, req, res, next) => {
     res.status(status).json({message: message, data: data});
 });
 
-mongoose.connect('mongodb+srv://<username>:<password>@cluster0.ovhcg1f.mongodb.net/<collection>?retryWrites=true&w=majority')
+mongoose.connect(MONGO_DB_URI)
 .then(result => {
     app.listen(8080);
 }) 
